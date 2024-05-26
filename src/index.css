@@ -1,7 +1,51 @@
 @import "./assets/fonts/fonts.css";
 
+:root {
+  --bg-main: #f7f8fa;
+  --main-black: #1d1e21;
+  --accent-color: #59b17a;
+  --border-color: rgba(29, 30, 33, 0.1);
+  --white-color: #fff;
+  --hover-effect: 400ms ease;
+  --hover-accent: #3f945f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
+  background-color: var(--bg-main);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
