@@ -19,12 +19,25 @@ export const Form = styled.form`
             border-radius: 60px;
             border: 1px solid var(--border-color);
             padding-left: 18px;
+
+            &::placeholder {
+                color: var(--placeholder-color);
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 1.5;
+                font-family: 'Inter', sans-serif;
+            }
         }
     }
 
     @media screen and (min-width: 768px){
         margin-top: 50px;
         max-width: 323px;
+    }
+
+    @media screen and (min-width: 1440px){
+        margin-top: 30%;
+        margin-bottom: 0;
     }
 `
 

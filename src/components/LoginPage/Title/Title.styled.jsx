@@ -3,7 +3,11 @@ import styled from "@emotion/styled";
 export const TitleContainer = styled.div`
   position: relative;
   margin-top: 30%;
-  max-width: 335px;
+  max-width: 280px;
+
+  @media screen and (min-width: 375px){
+    max-width: 335px;
+  }
 
   @media screen and (min-width: 768px){
     max-width: 614px;
@@ -46,6 +50,10 @@ export const TitleContainer = styled.div`
         width: 179px;
         height: 175px;
       }
+    }
+
+    @media screen and (min-width: 1440px){
+      right: 0;
     }
   }
 `;
