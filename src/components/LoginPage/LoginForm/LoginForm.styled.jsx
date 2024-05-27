@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 
 export const Form = styled.form`
     margin-top: 40px;
-    margin-bottom: 30%;
     max-width: 335px;
     width: 100%;
     display: flex;
@@ -37,7 +36,6 @@ export const Form = styled.form`
 
     @media screen and (min-width: 1440px){
         margin-top: 30%;
-        margin-bottom: 0;
     }
 `
 
