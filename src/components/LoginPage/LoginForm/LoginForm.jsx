@@ -1,10 +1,14 @@
+// @ts-nocheck
 import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useDispatch } from "react-redux";
+import { logIn } from "../../../redux/auth/operations";
 import { schemaLogin } from "../../../schemas/shemas";
 import { Form, SubmitBtn } from "./LoginForm.styled";
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -12,7 +16,7 @@ const LoginForm = () => {
   } = useForm({ resolver: yupResolver(schemaLogin) });
 
   const onSubmit = (data) => {
-   console.log(data);
+    dispatch(logIn(data));
   };
 
   return (

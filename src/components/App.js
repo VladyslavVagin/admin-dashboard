@@ -1,20 +1,20 @@
 // @ts-nocheck
-import React, { lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import SharedLayout from './SharedLayout/SharedLayout';
-
-const Login = lazy(() => import('../pages/Login/Login'));
-const Dashboard = lazy(() => import('../pages/Dashboard/Dashboard'));
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { RestrictedRoute } from "./RestrictedRoute";
+import SharedLayout from "./SharedLayout/SharedLayout";
+import Login from "../pages/Login/Login";
+import Dashboard from "../pages/Dashboard/Dashboard";
 
 function App() {
   return (
     <>
-     <Routes>
-        <Route path="/login" element={<Login />} />
-       <Route path="/" element={<SharedLayout />}>
-          <Route index element={<Dashboard />} />
-       </Route>
-     </Routes>
+      <Routes>
+        <Route path="/login" element={<RestrictedRoute redirectTo="/dashboard" component={<Login />}/>}  />
+        <Route path="/" element={<SharedLayout />}>
+          <Route index path="dashboard" element={<Dashboard />} />
+        </Route>
+      </Routes>
     </>
   );
 }

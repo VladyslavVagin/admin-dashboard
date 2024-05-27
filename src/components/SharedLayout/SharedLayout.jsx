@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 const SharedLayout = () => {
   return (
@@ -9,6 +10,7 @@ const SharedLayout = () => {
           <Outlet />
         </Suspense>
       </main>
+      <ToastContainer />
     </>
   );
 };
