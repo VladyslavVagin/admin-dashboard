@@ -21,7 +21,7 @@ function App() {
     <>
       <Routes>
         <Route path="/login" element={<RestrictedRoute redirectTo="/dashboard" component={<Login />} />} />
-        <Route path="/" element={<SharedLayout />}>
+        <Route path="/" element={ <PrivateRoute redirectTo="/login" component={SharedLayout} />}>
           <Route index path="/dashboard" element={ <PrivateRoute redirectTo="/login" component={Dashboard} />} />
         </Route>
       </Routes>

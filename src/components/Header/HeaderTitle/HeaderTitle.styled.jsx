@@ -19,4 +19,11 @@ export const HeaderTitleStyled = styled.div`
     font-weight: 400;
     line-height: 1.5;
   }
+
+  @media screen and (min-width: 768px){
+    h1 {
+      font-size: 24px;
+      line-height: 1.17;
+    }
+  }
 `;

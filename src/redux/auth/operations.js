@@ -30,7 +30,7 @@ const clearAuthHeader = () => {
 
   export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     try {
-      await axios.post('api/user/logout');
+      await axios.get('api/user/logout');
       clearAuthHeader();
     } catch (error) {
       toast.error('Error, server not answer');

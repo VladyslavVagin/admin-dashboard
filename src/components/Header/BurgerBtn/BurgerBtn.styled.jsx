@@ -15,4 +15,8 @@ export const StyledBurgerBtn = styled.button`
     min-height: 32px;
     stroke: var(--main-black);
  }
+
+ @media screen and (min-width: 1440px){
+   display: none;
+ }
 `
