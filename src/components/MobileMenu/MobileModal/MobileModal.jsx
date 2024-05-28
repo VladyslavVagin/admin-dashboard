@@ -1,7 +1,8 @@
 // @ts-nocheck
 import React, { useRef } from "react";
 import { createPortal } from "react-dom";
-import { Backdrop, ModalContainer } from "./MobileModal.styled";
+import sprite from "../../../assets/sprite.svg";
+import { Backdrop, CloseButton, ModalContainer } from "./MobileModal.styled";
 
 const MobileModal = ({ children, setIsShowMobileMenu }) => {
   const modalRoot = document?.getElementById("modal-root");
@@ -13,11 +14,20 @@ const MobileModal = ({ children, setIsShowMobileMenu }) => {
     }
   };
 
+  const handleCloseButtonClick = () => setIsShowMobileMenu(false);
+
   return (
     <>
       {createPortal(
         <Backdrop ref={backdropRef} onClick={handleBackdropClick}>
-          <ModalContainer>{children}</ModalContainer>
+          <ModalContainer>
+            <CloseButton type="button" onClick={handleCloseButtonClick}>
+              <svg>
+                <use xlinkHref={`${sprite}#icon-close`}></use>
+              </svg>
+            </CloseButton>
+            {children}
+          </ModalContainer>
         </Backdrop>,
         modalRoot
       )}

@@ -6,6 +6,7 @@
   --accent-color: #59b17a;
   --border-color: rgba(29, 30, 33, 0.1);
   --placeholder-color: rgba(29, 30, 33, 0.4);
+  --bg-backdrop: rgba(29, 30, 33, 0.3);
   --white-color: #fff;
   --hover-effect: 400ms ease;
   --hover-accent: #3f945f;
