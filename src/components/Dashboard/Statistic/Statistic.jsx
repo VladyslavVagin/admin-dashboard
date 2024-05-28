@@ -1,14 +1,15 @@
 import React from "react";
 import { useDashboard } from "../../../hooks/useDashboard";
 import sprite from "../../../assets/sprite.svg";
+import { ListItem, ListStats } from "./Statistic.styled";
 
 const Statistic = () => {
   const { allCustomers, allProducts, allSuppliers } = useDashboard();
 
   return (
     <section>
-      <ul>
-        <li>
+      <ListStats>
+        <ListItem>
           <div>
             <svg width={18} height={18}>
               <use xlinkHref={`${sprite}#icon-currency`}></use>
@@ -16,8 +17,8 @@ const Statistic = () => {
             <p>All products</p>
           </div>
           <span>{allProducts}</span>
-        </li>
-        <li>
+        </ListItem>
+        <ListItem>
           <div>
             <svg width={18} height={18}>
               <use xlinkHref={`${sprite}#icon-ci_users`}></use>
@@ -25,8 +26,8 @@ const Statistic = () => {
             <p>All suppliers</p>
           </div>
           <span>{allSuppliers}</span>
-        </li>
-        <li>
+        </ListItem>
+        <ListItem>
           <div>
             <svg width={18} height={18}>
               <use xlinkHref={`${sprite}#icon-ci_users`}></use>
@@ -34,8 +35,8 @@ const Statistic = () => {
             <p>All customers</p>
           </div>
           <span>{allCustomers}</span>
-        </li>
-      </ul>
+        </ListItem>
+      </ListStats>
     </section>
   );
 };
