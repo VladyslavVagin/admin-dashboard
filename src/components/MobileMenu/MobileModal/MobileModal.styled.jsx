@@ -11,7 +11,7 @@ export const Backdrop = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-  background-color: white;
+  background-color: var(--bg-main);
   max-width: 78px;
   width: 100%;
   position: absolute;
@@ -19,6 +19,14 @@ export const ModalContainer = styled.div`
   left: 0;
   height: 100%;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (min-width: 768px){
+    max-width: 84px;
+  }
 `;
 
 export const CloseButton = styled.button`
