@@ -17,6 +17,7 @@ export const MenuItemLink = styled(NavLink)`
   justify-content: center;
   background-color: var(--white-color);
   border-radius: 50%;
+  transition: all var(--hover-effect);
 
   svg {
     fill: var(--icons-color);
@@ -36,6 +37,13 @@ export const MenuItemLink = styled(NavLink)`
     svg {
       width: 16px;
       height: 16px;
+    }
+  }
+
+  @media screen and (min-width: 1440px){
+    &:hover,
+    &:focus {
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     }
   }
 `;

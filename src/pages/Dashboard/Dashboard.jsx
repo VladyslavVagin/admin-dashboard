@@ -1,8 +1,20 @@
-import React from 'react'
+// @ts-nocheck
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getDashboardInfo } from '../../redux/dashboard/operations';
+import Statistic from '../../components/Dashboard/Statistic/Statistic';
 
 const Dashboard = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getDashboardInfo());
+  }, [dispatch]);
+
   return (
-    <div>Dashboard</div>
+    <div>
+      <Statistic />
+    </div>
   )
 }
 
