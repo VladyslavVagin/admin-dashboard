@@ -12,6 +12,9 @@
   --hover-accent: #3f945f;
   --icons-color: #DCDDDF;
   --bg-color: #e7f1ed;
+  --expense-color: #e85050;
+  --expense-bg: rgba(232, 80, 80, 0.1);
+  --income-bg: rgba(89, 177, 122, 0.1);
 }
 
 * {
