@@ -5,6 +5,7 @@ import { getDashboardInfo } from '../../redux/dashboard/operations';
 import Statistic from '../../components/Dashboard/Statistic/Statistic';
 import { PageContainer } from '../../components/Common/PageContainer';
 import RecentCustomers from '../../components/Dashboard/RecentCustomers/RecentCustomers';
+import IncomeExpenses from '../../components/Dashboard/IncomeExpenses/IncomeExpenses';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const Dashboard = () => {
       <Statistic />
       <div>
         <RecentCustomers/>
+        <IncomeExpenses/>
       </div>
     </PageContainer>
   )

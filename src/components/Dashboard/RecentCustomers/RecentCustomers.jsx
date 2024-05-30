@@ -1,13 +1,13 @@
 import React from "react";
 import EllipsisText from "react-ellipsis-text";
 import { useDashboard } from "../../../hooks/useDashboard";
-import { ColumnContent, NameColumnContent, TH, Table } from "./RecentCustomers.styled";
+import { ColumnContent, NameColumnContent, Section, TH, Table } from "./RecentCustomers.styled";
 
 const RecentCustomers = () => {
   const { recentCustomers } = useDashboard();
 
   return (
-    <section>
+    <Section>
       <Table>
         <caption>Recent customers</caption>
         <thead>
@@ -32,7 +32,7 @@ const RecentCustomers = () => {
           ))}
         </tbody>
       </Table>
-    </section>
+    </Section>
   );
 };
 

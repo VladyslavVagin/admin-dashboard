@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
 
+export const Section = styled.section`
+  margin-bottom: 40px;
+`
+
 export const Table = styled.table`
   width: 100%;
   border: 1px solid var(--border-color);
@@ -22,6 +26,16 @@ export const Table = styled.table`
 
   thead {
     text-align: left;
+  }
+
+  tbody {
+    tr {
+      &:last-of-type {
+        td {
+          border-bottom: none;
+        }
+      }
+    }
   }
 `;
 
@@ -56,11 +70,16 @@ export const ColumnContent = styled.td`
   border-bottom: 1px solid var(--border-color);
   padding: 14px 0;
 
+  &:nth-of-type(2) {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
   &:not(:last-of-type) {
     border-right: 1px solid var(--border-color);
   }
 
-    &:not(:first-of-type) {
+    &:last-of-type {
         padding-left: 14px;
     }
 `;
