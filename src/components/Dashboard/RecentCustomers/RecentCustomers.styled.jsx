@@ -37,6 +37,17 @@ export const Table = styled.table`
       }
     }
   }
+
+  @media screen and (min-width: 768px) {
+    padding: 0 20px;
+
+    caption {
+      font-size: 18px;
+      line-height: 1.33;
+      height: 64px;
+      padding: 20px;
+    }
+  }
 `;
 
 export const TH = styled.th`
@@ -53,6 +64,7 @@ export const TH = styled.th`
 
   &:not(:first-of-type) {
     padding-left: 14px;
+    line-height: 1.29;
   }
 `;
 
@@ -64,7 +76,7 @@ export const NameColumnContent = styled.div`
 `;
 
 export const ColumnContent = styled.td`
-  font-size: 12px;
+  font-size: 9px;
   font-weight: 500;
   line-height: 1.17;
   border-bottom: 1px solid var(--border-color);
@@ -81,5 +93,9 @@ export const ColumnContent = styled.td`
 
     &:last-of-type {
         padding-left: 14px;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 12px;
     }
 `;

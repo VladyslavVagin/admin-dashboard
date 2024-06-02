@@ -41,7 +41,7 @@ export const TDtype = styled.td`
 
 export const TDname = styled.td`
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.29;
   color: var(--main-black);
   text-align: left;
@@ -49,11 +49,15 @@ export const TDname = styled.td`
   padding-top: 14px;
   padding-bottom: 14px;
   border-bottom: 1px solid var(--border-color);
+
+  @media screen and (min-width: 375px){
+    font-size: 14px;
+  }
 `;
 
 export const TDamount = styled.td`
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.29;
   color: ${({ itemtype }) =>
     itemtype === "Expense"
@@ -65,4 +69,8 @@ export const TDamount = styled.td`
   text-decoration: ${({ itemtype }) =>
     itemtype === "Error" ? "line-through" : "none"};
   border-bottom: 1px solid var(--border-color);
+
+  @media screen and (min-width: 375px){
+    font-size: 14px;
+  }
 `;
