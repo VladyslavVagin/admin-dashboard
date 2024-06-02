@@ -70,6 +70,10 @@ export const TDname = styled.td`
     padding-top: 20px;
     padding-bottom: 20px;
   }
+
+  @media screen and (min-width: 1440px){
+    line-height: 1.4;
+  }
 `;
 
 export const TDamount = styled.td`

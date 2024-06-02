@@ -4,7 +4,7 @@ export const PageContainer = styled.div`
   padding: 0 20px;
   max-width: 375px;
   width: 100%;
-  margin: 0 auto;
+  margin: 80px auto 0 auto;
 
   @media screen and (min-width: 768px) {
     max-width: 768px;
@@ -13,6 +13,6 @@ export const PageContainer = styled.div`
 
   @media screen and (min-width: 1440px){
     max-width: 1360px;
-    padding: 0 40px;
+    padding: 0 80px;
   }
 `;

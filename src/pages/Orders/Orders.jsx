@@ -1,18 +1,22 @@
 // @ts-nocheck
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { getOrders } from '../../redux/orders/operations';
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getOrders } from "../../redux/orders/operations";
+import { PageContainer } from "../../components/Common/PageContainer";
+import FilterBar from "../../components/FilterBar/FilterBar";
 
 const Orders = () => {
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-useEffect(() => {
+  useEffect(() => {
     dispatch(getOrders());
-}, [dispatch]);
+  }, [dispatch]);
 
   return (
-    <div>Orders</div>
-  )
-}
+    <PageContainer>
+      <FilterBar />
+    </PageContainer>
+  );
+};
 
 export default Orders;

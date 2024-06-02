@@ -3,6 +3,10 @@ import styled from "@emotion/styled";
 export const HeaderMain = styled.header`
   padding: 0 20px;
   border-bottom: 1px solid var(--border-color);
+  position: fixed;
+  width: 100%;
+  background-color: var(--bg-main);
+  z-index: 100;
 
   @media screen  and (min-width: 1440px){
     padding: 0 40px 0 20px;

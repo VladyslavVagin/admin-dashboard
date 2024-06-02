@@ -6,5 +6,6 @@ export const FlexBoxDesktop = styled.div`
     align-items: flex-start;
     justify-content: flex-start;
     column-gap: 20px;
+    padding-bottom: 40px;
   }
 `;
