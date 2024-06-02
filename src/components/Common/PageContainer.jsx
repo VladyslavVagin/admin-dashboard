@@ -10,4 +10,9 @@ export const PageContainer = styled.div`
     max-width: 768px;
     padding: 0 32px;
   }
+
+  @media screen and (min-width: 1440px){
+    max-width: 1360px;
+    padding: 0 40px;
+  }
 `;

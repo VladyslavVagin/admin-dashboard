@@ -17,6 +17,10 @@ export const ListStats = styled.ul`
   @media screen and (min-width: 768px){
     margin: 20px 0;
   }
+
+  @media screen and (min-width: 1440px){
+    margin: 20px 0 40px 0;
+  }
 `;
 
 export const ListItem = styled.li`
@@ -78,5 +82,9 @@ export const ListItem = styled.li`
       font-size: 24px;
       line-height: 1.33;
     }
+  }
+
+  @media screen and (min-width: 1440px){
+    width: 240px;
   }
 `;

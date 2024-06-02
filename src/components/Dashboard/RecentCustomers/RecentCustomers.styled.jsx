@@ -2,10 +2,15 @@ import styled from "@emotion/styled";
 
 export const Section = styled.section`
   margin-bottom: 40px;
-`
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 0;
+  }
+`;
 
 export const Table = styled.table`
   width: 100%;
+  background-color: var(--white-color);
   border: 1px solid var(--border-color);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -48,6 +53,10 @@ export const Table = styled.table`
       padding: 20px;
     }
   }
+
+  @media screen and (min-width: 1440px){
+    width: 630px;
+  }
 `;
 
 export const TH = styled.th`
@@ -66,6 +75,16 @@ export const TH = styled.th`
     padding-left: 14px;
     line-height: 1.29;
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.29;
+    padding: 20px 0;
+
+    &:not(:first-of-type) {
+      padding-left: 20px;
+    }
+  }
 `;
 
 export const NameColumnContent = styled.div`
@@ -73,6 +92,18 @@ export const NameColumnContent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   row-gap: 8px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 8px;
+
+    img {
+      width: 36px;
+      height: 36px;
+    }
+  }
 `;
 
 export const ColumnContent = styled.td`
@@ -85,17 +116,28 @@ export const ColumnContent = styled.td`
   &:nth-of-type(2) {
     padding-right: 8px;
     padding-left: 8px;
+    text-align: center;
   }
 
   &:not(:last-of-type) {
     border-right: 1px solid var(--border-color);
   }
 
-    &:last-of-type {
-        padding-left: 14px;
-    }
+  &:last-of-type {
+    padding-left: 14px;
+  }
 
-    @media screen and (min-width: 375px) {
-      font-size: 12px;
+  @media screen and (min-width: 375px) {
+    font-size: 12px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.12;
+    padding: 20px 0;
+
+    &:last-of-type {
+      padding-left: 20px;
     }
+  }
 `;

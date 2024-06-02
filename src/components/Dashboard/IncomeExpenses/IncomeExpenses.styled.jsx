@@ -8,6 +8,10 @@ export const TH = styled.th`
   line-height: 1.29;
   color: var(--placeholder-color);
   padding: 14px 0;
+
+  @media screen and (min-width: 768px){
+    padding: 20px 0;
+  }
 `;
 
 export const TDtype = styled.td`
@@ -37,6 +41,12 @@ export const TDtype = styled.td`
     text-align: center;
     padding-top: 4px;
   }
+
+  @media screen and (min-width: 768px) {
+    p {
+      font-size: 14px;
+    }
+  }
 `;
 
 export const TDname = styled.td`
@@ -50,8 +60,15 @@ export const TDname = styled.td`
   padding-bottom: 14px;
   border-bottom: 1px solid var(--border-color);
 
-  @media screen and (min-width: 375px){
+  @media screen and (min-width: 375px) {
     font-size: 14px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 `;
 
@@ -70,7 +87,11 @@ export const TDamount = styled.td`
     itemtype === "Error" ? "line-through" : "none"};
   border-bottom: 1px solid var(--border-color);
 
-  @media screen and (min-width: 375px){
+  @media screen and (min-width: 375px) {
     font-size: 14px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
   }
 `;
