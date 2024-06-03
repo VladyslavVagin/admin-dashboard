@@ -1,9 +1,12 @@
+// @ts-nocheck
 import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
+import { getOrdersByQuery } from "../../redux/orders/operations";
+import sprite from "../../assets/sprite.svg";
 import { schemaFilter } from "../../schemas/shemas";
-import { FilterContainer } from "./FilterBar.styled";
+import { FilterContainer, Form, Label } from "./FilterBar.styled";
 
 const FilterBar = () => {
   const dispatch = useDispatch();
@@ -14,21 +17,31 @@ const FilterBar = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schemaFilter) });
 
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = (data) => {
+      if(data.query !== "" || data.query !== null) {
+        dispatch(getOrdersByQuery(data.query));
+        setValue("query", "");
+      }
+    };
 
   return (
     <FilterContainer>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label>
+      <Form onSubmit={handleSubmit(onSubmit)}>
+        <Label>
           <input
             type="text"
             {...register("query")}
-            placeholder="User name"
+            placeholder="User Name"
             required
           />
           <p>{errors.query?.message}</p>
-        </label>
-      </form>
+        </Label>
+        <button type="submit">
+          <svg width={14} height={14}>
+            <use xlinkHref={`${sprite}#icon-filter`}></use>
+          </svg>
+          Filter</button>
+      </Form>
     </FilterContainer>
   );
 };

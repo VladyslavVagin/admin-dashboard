@@ -28,7 +28,7 @@ const RecentCustomers = () => {
                   <p>{customer.name}</p>
                 </NameColumnContent>
               </ColumnContent>
-              <ColumnContent><EllipsisText text={customer.email} length={isTablet ? "40" : "22"}/></ColumnContent>
+              <ColumnContent><EllipsisText text={customer.email} length={isTablet ? 40 : 22}/></ColumnContent>
               <ColumnContent>{customer.spent}</ColumnContent>
             </tr>
           ))}

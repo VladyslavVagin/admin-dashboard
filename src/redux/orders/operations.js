@@ -32,7 +32,7 @@ const setAuthHeader = token => {
 
   export const getOrdersByQuery = createAsyncThunk(
     'orders/getByQuery',
-    async (keyword, thunkAPI) => {
+    async (query, thunkAPI) => {
       const state = thunkAPI.getState();
       const persistedToken = state.auth.token;
   
@@ -42,7 +42,7 @@ const setAuthHeader = token => {
   
       try {
         setAuthHeader(persistedToken);
-        const res = await axios.get(`/api/orders?query=${keyword}`);
+        const res = await axios.get(`/api/orders?query=${query}`);
         return res.data;
       } catch (error) {
         toast.error('ERROR, No orders found');
