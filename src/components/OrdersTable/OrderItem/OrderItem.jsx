@@ -1,13 +1,16 @@
+// @ts-nocheck
 import React from "react";
-import { ColumnContent } from "./OrderItem.styled";
+import { ColumnContent, ContentUser, StatusOrder } from "./OrderItem.styled";
 
 const OrderItem = ({ order }) => {
   return (
     <>
       <tr key={order._id}>
         <ColumnContent>
-          <img src={order.photo} alt={order.name} width={24} height={24}/>
-          <p>{order.name}</p>
+          <ContentUser>
+            <img src={order.photo} alt={order.name} width={24} height={24} />
+            <p>{order.name}</p>
+          </ContentUser>
         </ColumnContent>
         <ColumnContent>
           <address>{order.address}</address>
@@ -22,7 +25,7 @@ const OrderItem = ({ order }) => {
           <span>{order.price}</span>
         </ColumnContent>
         <ColumnContent>
-          <span>{order.status}</span>
+          <StatusOrder status={order.status.toString()}>{order.status}</StatusOrder>
         </ColumnContent>
       </tr>
     </>

@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 
 export const Table = styled.table`
   width: 671px;
+  min-width: 671px;
+  overflow-x: scroll;
   background-color: var(--white-color);
   border: 1px solid var(--border-color);
   border-bottom-left-radius: 8px;
