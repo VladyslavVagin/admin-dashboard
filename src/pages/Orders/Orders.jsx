@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { getOrders } from "../../redux/orders/operations";
 import { PageContainer } from "../../components/Common/PageContainer";
 import FilterBar from "../../components/FilterBar/FilterBar";
+import OrdersTable from "../../components/OrdersTable/OrdersTable";
 
 const Orders = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const Orders = () => {
   return (
     <PageContainer>
       <FilterBar />
+      <OrdersTable />
     </PageContainer>
   );
 };
