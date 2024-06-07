@@ -1,3 +1,4 @@
+// @ts-nocheck
 import styled from "@emotion/styled";
 
 export const Table = styled.table`
@@ -51,4 +52,21 @@ export const Table = styled.table`
   @media screen and (min-width: 1440px) {
     width: 630px;
   }
+`;
+
+export const Pagination = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  margin-top: 20px;
+`;
+
+export const PageBtn = styled.button`
+  width: 12px;
+  height: 12px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background-color: ${({ isActive }) => (isActive ? "var(--accent-color)" : "#e7f1ed")};
 `;

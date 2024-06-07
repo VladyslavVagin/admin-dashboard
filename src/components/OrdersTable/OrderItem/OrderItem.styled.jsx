@@ -62,7 +62,16 @@ export const StatusOrder = styled.span`
   min-width: 92px;
   min-height: 25px;
   height: 25px;
-  background-color: rgba(89, 177, 122, 0.1);
+  background-color: ${({ status }) =>
+      status === "Completed"
+        ? "rgba(89, 177, 122, 0.1)"
+        : status === "Confirmed"
+        ? "rgba(128, 89, 228, 0.1)"
+        : status === "Pending"
+        ? "rgba(247, 144, 66, 0.1)"
+        : status === "Cancelled"
+        ? "rgba(232, 80, 80, 0.1)"
+        : "rgba(112, 166, 232, 0.1)"};
   color: ${({ status }) =>
       status === "Completed"
         ? "var(--accent-color)"
