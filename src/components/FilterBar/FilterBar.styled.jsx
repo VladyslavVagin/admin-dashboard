@@ -9,6 +9,10 @@ export const Form = styled.form`
   align-items: center;
   justify-content: flex-start;
   column-gap: 8px;
+
+  @media screen and (min-width: 768px) {
+    column-gap: 14px;
+  }
 `;
 
 export const FilterBtn = styled.button`
@@ -60,10 +64,14 @@ export const Label = styled.label`
     font-size: 10px;
     color: var(--expense-color);
   }
+
+  @media screen and (min-width: 768px){
+    width: 224px;
+  }
 `;
 
 export const ResetBtn = styled.button`
- background-color: transparent;
+  background-color: transparent;
   border: none;
   outline: none;
   position: absolute;
@@ -77,4 +85,4 @@ export const ResetBtn = styled.button`
   svg {
     stroke: var(--placeholder-color);
   }
-`
+`;

@@ -5,6 +5,7 @@ export const PageContainer = styled.div`
   max-width: 375px;
   width: 100%;
   margin: 80px auto 0 auto;
+  overflow-x: scroll;
 
   @media screen and (min-width: 768px) {
     max-width: 768px;

@@ -40,6 +40,8 @@ export const Table = styled.table`
 
   @media screen and (min-width: 768px) {
     padding: 0 20px;
+    width: 960px;
+    min-width: 960px;
 
     caption {
       font-size: 18px;
@@ -50,7 +52,8 @@ export const Table = styled.table`
   }
 
   @media screen and (min-width: 1440px) {
-    width: 630px;
+    width: 1280px;
+    min-width: 1280px;
   }
 `;
 
@@ -60,6 +63,7 @@ export const Pagination = styled.div`
   justify-content: center;
   column-gap: 10px;
   margin-top: 20px;
+  margin-bottom: 20px;
 `;
 
 export const PageBtn = styled.button`
@@ -68,5 +72,6 @@ export const PageBtn = styled.button`
   border: none;
   outline: none;
   border-radius: 50%;
-  background-color: ${({ isActive }) => (isActive ? "var(--accent-color)" : "#e7f1ed")};
+  background-color: ${({ isActive }) =>
+    isActive ? "var(--accent-color)" : "#e7f1ed"};
 `;
