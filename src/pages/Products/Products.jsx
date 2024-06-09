@@ -1,8 +1,25 @@
-import React from 'react'
+// @ts-nocheck
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getProducts } from '../../redux/products/operations';
+import { PageContainer } from '../../components/Common/PageContainer';
+import Filter from '../../components/ProductsPage/Filter/Filter';
+import AddProduct from '../../components/ProductsPage/AddProduct/AddProduct';
+import ProductsTable from '../../components/ProductsPage/ProductsTable/ProductsTable';
 
 const Products = () => {
+const dispatch = useDispatch();
+
+useEffect(() => {
+  dispatch(getProducts());
+}, [dispatch]);
+
   return (
-    <div>Products</div>
+    <PageContainer>
+      <Filter />
+      <AddProduct />
+      <ProductsTable />
+    </PageContainer>
   )
 }
 
