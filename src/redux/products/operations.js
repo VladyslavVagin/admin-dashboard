@@ -43,9 +43,31 @@ export const getProductsByQuery = createAsyncThunk(
     try {
       setAuthHeader(persistedToken);
       const res = await axios.get(`/api/products?query=${query}`);
-      return res.data;
+      return res.data.products;
     } catch (error) {
       toast.error("ERROR, No orders found");
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const addProduct = createAsyncThunk(
+  "products/add",
+  async (product, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue("Unable to fetch user");
+    }
+
+    try {
+      setAuthHeader(persistedToken);
+      const res = await axios.post("/api/products", product);
+      console.log(res.data);
+      return res.data;
+    } catch (error) {
+      toast.error("ERROR, Unable to add product");
       return thunkAPI.rejectWithValue(error.message);
     }
   }

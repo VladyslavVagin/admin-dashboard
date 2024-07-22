@@ -6,7 +6,7 @@ const { name, category, price, stock, suppliers, _id } = product;
 
   return (
     <>
-    <tr key={_id}>
+    <tr>
       <ColumnContent>
         <p>{name}</p>
       </ColumnContent>

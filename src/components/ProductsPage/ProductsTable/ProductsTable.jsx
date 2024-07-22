@@ -35,7 +35,7 @@ const ProductsTable = () => {
         </tr>
       </thead>
       <tbody>
-        {currentProducts.map((product) => <ProductItem key={product._id} product={product} />)}
+        {currentProducts?.map((product) => <ProductItem key={product._id} product={product} />)}
       </tbody>
     </Table>
     <Pagination>

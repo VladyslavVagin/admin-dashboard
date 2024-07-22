@@ -9,6 +9,11 @@ export const ColumnContent = styled.td`
   padding: 14px 0;
   text-align: flex-start;
 
+  &:first-of-type {
+    max-width: 160px;
+    min-width: 160px;
+  }
+
   &:nth-of-type(3),
   &:nth-of-type(4),
   &:nth-of-type(5),
@@ -16,6 +21,11 @@ export const ColumnContent = styled.td`
     padding-right: 8px;
     padding-left: 8px;
     text-align: center;
+  }
+
+  &:nth-of-type(2) {
+    width: 148px;
+    max-width: 148px;
   }
 
   &:not(:last-of-type) {

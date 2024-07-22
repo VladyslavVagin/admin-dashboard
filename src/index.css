@@ -60,3 +60,7 @@ img {
 address {
   font-style: normal;
 } 
+
+.css-1u9des2-indicatorSeparator {
+  display: none;
+}
