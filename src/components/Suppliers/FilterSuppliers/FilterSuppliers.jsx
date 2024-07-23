@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
-import { getProductsByQuery, getProducts } from "../../../redux/products/operations";
+import { getSuppliers } from '../../../redux/suppliers/operations';
 import sprite from "../../../assets/sprite.svg";
 import { schemaFilter } from "../../../schemas/shemas";
 import {
@@ -15,7 +15,7 @@ import {
   } from "../../FilterBar/FilterBar.styled";
   
 
-const Filter = () => {
+const FilterSuppliers = () => {
     const dispatch = useDispatch();
     const [showReset, setShowReset] = useState(false);
     const {
@@ -27,14 +27,14 @@ const Filter = () => {
     
       const onSubmit = (data) => {
         if (data.query !== "" || data.query !== null) {
-          dispatch(getProductsByQuery(data.query));
+        //   dispatch(getProductsByQuery(data.query));
           setShowReset(true);
         }
       };
 
       const handleReset = () => {
         setValue("query", "");
-        dispatch(getProducts());
+        dispatch(getSuppliers());
         setShowReset(false);
       };
     
@@ -52,7 +52,7 @@ const Filter = () => {
           type="text"
           {...register("query")}
           onChange={handleChangeInput}
-          placeholder="Product Name"
+          placeholder="User Name"
           required
         />
         {showReset && (
@@ -75,4 +75,4 @@ const Filter = () => {
   )
 }
 
-export default Filter
+export default FilterSuppliers;

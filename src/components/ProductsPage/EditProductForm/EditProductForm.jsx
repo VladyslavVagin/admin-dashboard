@@ -42,7 +42,7 @@ const EditProductForm = ({ setIsEdit, product }) => {
 
   return (
     <Modal fn={setIsEdit}>
-      <TitleForm>Edit a product</TitleForm>
+      <TitleForm>Edit product</TitleForm>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <FlexInputContainer>
           <label>
