@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
-import { getSuppliers } from '../../../redux/suppliers/operations';
+import { getSuppliers, getSuppliersByQuery } from '../../../redux/suppliers/operations';
 import sprite from "../../../assets/sprite.svg";
 import { schemaFilter } from "../../../schemas/shemas";
 import {
@@ -27,7 +27,7 @@ const FilterSuppliers = () => {
     
       const onSubmit = (data) => {
         if (data.query !== "" || data.query !== null) {
-        //   dispatch(getProductsByQuery(data.query));
+          dispatch(getSuppliersByQuery(data.query));
           setShowReset(true);
         }
       };

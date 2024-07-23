@@ -1,24 +1,31 @@
 import React from "react";
 import Select from "react-select";
 import { useMediaQuery } from "react-responsive";
-import { categories } from "../../../../lib/categories";
+import { useSuppliers } from "../../../../hooks/useSuppliers";
 
-const CategorySelect = ({ categoryValue, setCategoryValue }) => {
+const SuppliersSelect = ({ suppliersValue, setSuppliersValue }) => {
   const is768 = useMediaQuery({ minWidth: 768 });
+  const { suppliers } = useSuppliers();
+  const suppliersList = suppliers.map((supplier) => {
+    return {
+        label: supplier.suppliers,
+        value: supplier.suppliers,
+    }
+  });
 
-  const handleByCategory = (e) => setCategoryValue(e?.value);
+  const handleByCategory = (e) => setSuppliersValue(e?.value);
   const selectValue =
-    categoryValue === null
+    suppliersValue === null
       ? null
-      : categories.find((option) => option.label === categoryValue);
+      : suppliersList.find((option) => option.label === suppliersValue);
 
   return (
     <>
       <Select
         value={selectValue}
         onChange={handleByCategory}
-        options={categories}
-        placeholder={"Category"}
+        options={suppliersList}
+        placeholder={"Supplier"}
         maxMenuHeight={178}
         isClearable={true}
         styles={{
@@ -86,4 +93,4 @@ const CategorySelect = ({ categoryValue, setCategoryValue }) => {
   );
 };
 
-export default CategorySelect;
+export default SuppliersSelect;

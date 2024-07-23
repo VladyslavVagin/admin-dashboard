@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getSuppliers } from "./operations";
+import { getSuppliers, getSuppliersByQuery } from "./operations";
 
 const initialState = {
   suppliers: [],
@@ -22,6 +22,18 @@ const suppliersSlice = createSlice({
         state.isError = false;
       })
       .addCase(getSuppliers.rejected, (state, _) => {
+        state.isLoading = false;
+        state.isError = true;
+      })
+      .addCase(getSuppliersByQuery.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getSuppliersByQuery.fulfilled, (state, { payload }) => {
+        state.suppliers = payload;
+        state.isLoading = false;
+        state.isError = false;
+      })
+      .addCase(getSuppliersByQuery.rejected, (state, _) => {
         state.isLoading = false;
         state.isError = true;
       });

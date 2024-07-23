@@ -9,6 +9,7 @@ import { addProduct } from "../../../redux/products/operations";
 import Modal from "../../Common/Modal/Modal";
 import ButtonsModal from "../../Common/ButtonsModal/ButtonsModal";
 import CategorySelect from "./CategorySelect/CategorySelect";
+import SuppliersSelect from "./SuppliersSelect/SuppliersSelect";
 import {
   Form,
   Input,
@@ -27,12 +28,17 @@ const AddProductForm = ({ setShowModal }) => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(addProductSchema) });
   const [categoryValue, setCategoryValue] = useState(null);
+  const [suppliersValue, setSuppliersValue] = useState(null);
 
   useEffect(() => {
     if (categoryValue) {
       setValue("category", categoryValue);
     }
-  }, [categoryValue]);
+
+    if (suppliersValue) {
+      setValue("suppliers", suppliersValue);
+    }
+  }, [categoryValue, suppliersValue]);
 
   const onSubmit = (data) => {
     dispatch(addProduct(data));
@@ -64,12 +70,12 @@ const AddProductForm = ({ setShowModal }) => {
         </FlexInputContainer>
         <FlexInputContainer>
           <label>
-            <Input
-              type="text"
-              {...register("suppliers")}
-              placeholder="Suppliers"
+            <SuppliersSelect
+              suppliersValue={suppliersValue}
+              setSuppliersValue={setSuppliersValue}
             />
             <ErrorText>{errors?.suppliers?.message}</ErrorText>
+            <InvisibleInput {...register("suppliers")} type="text" />
           </label>
           <label>
             <Input type="text" {...register("stock")} placeholder="Stock" />

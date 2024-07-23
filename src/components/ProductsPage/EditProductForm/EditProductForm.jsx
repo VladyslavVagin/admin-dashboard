@@ -9,6 +9,7 @@ import { editProductSchema } from "../../../schemas/shemas";
 import Modal from "../../Common/Modal/Modal";
 import ButtonsModal from "../../Common/ButtonsModal/ButtonsModal";
 import CategorySelect from "../AddProductForm/CategorySelect/CategorySelect";
+import SuppliersSelect from "../AddProductForm/SuppliersSelect/SuppliersSelect";
 import {
   Form,
   Input,
@@ -20,6 +21,7 @@ import {
 
 const EditProductForm = ({ setIsEdit, product }) => {
   const [categoryValue, setCategoryValue] = useState(product.category);
+  const [suppliersValue, setSuppliersValue] = useState(product.suppliers);
   const dispatch = useDispatch();
   const {
     register,
@@ -32,7 +34,11 @@ const EditProductForm = ({ setIsEdit, product }) => {
     if (categoryValue) {
       setValue("category", categoryValue);
     }
-  }, [categoryValue]);
+
+    if (suppliersValue) {
+      setValue("suppliers", suppliersValue);
+    }
+  }, [categoryValue, suppliersValue]);
 
   const onSubmit = (data) => {
     dispatch(editProduct({ data, id: product._id }));
@@ -69,13 +75,16 @@ const EditProductForm = ({ setIsEdit, product }) => {
         </FlexInputContainer>
         <FlexInputContainer>
           <label>
-            <Input
-              type="text"
-              defaultValue={product.suppliers}
-              {...register("suppliers")}
-              placeholder="Suppliers"
+            <SuppliersSelect
+              suppliersValue={suppliersValue}
+              setSuppliersValue={setSuppliersValue}
             />
             <ErrorText>{errors?.suppliers?.message}</ErrorText>
+            <InvisibleInput
+              {...register("suppliers")}
+              defaultValue={product.suppliers}
+              type="text"
+            />
           </label>
           <label>
             <Input
