@@ -1,31 +1,31 @@
 // @ts-nocheck
 import React, { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { toast } from "react-toastify";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { addProductSchema } from "../../../schemas/shemas";
-import { addProduct } from "../../../redux/products/operations";
+import { toast } from "react-toastify";
+import { editProduct } from "../../../redux/products/operations";
+import { editProductSchema } from "../../../schemas/shemas";
 import Modal from "../../Common/Modal/Modal";
 import ButtonsModal from "../../Common/ButtonsModal/ButtonsModal";
-import CategorySelect from "./CategorySelect/CategorySelect";
+import CategorySelect from "../AddProductForm/CategorySelect/CategorySelect";
 import {
   Form,
   Input,
   TitleForm,
   InvisibleInput,
   ErrorText,
-} from "./AddProductForm.styled";
+} from "../AddProductForm/AddProductForm.styled";
 
-const AddProductForm = ({ setShowModal }) => {
+const EditProductForm = ({ setIsEdit, product }) => {
+  const [categoryValue, setCategoryValue] = useState(product.category);
   const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
     setValue,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(addProductSchema) });
-  const [categoryValue, setCategoryValue] = useState(null);
+  } = useForm({ resolver: yupResolver(editProductSchema) });
 
   useEffect(() => {
     if (categoryValue) {
@@ -34,19 +34,20 @@ const AddProductForm = ({ setShowModal }) => {
   }, [categoryValue]);
 
   const onSubmit = (data) => {
-    dispatch(addProduct(data));
-    setShowModal(false);
-    toast.success("Product added successfully");
+    dispatch(editProduct({ ...data, _id: product._id }));
+    setIsEdit(false);
+    toast.success("Product edited successfully");
   };
 
   return (
-    <Modal fn={setShowModal}>
-      <TitleForm>Add a new product</TitleForm>
+    <Modal fn={setIsEdit}>
+      <TitleForm>Edit a product</TitleForm>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <label>
           <Input
             type="text"
             {...register("name")}
+            defaultValue={product.name}
             placeholder="Product Info"
           />
           <ErrorText>{errors?.name?.message}</ErrorText>
@@ -57,28 +58,43 @@ const AddProductForm = ({ setShowModal }) => {
             setCategoryValue={setCategoryValue}
           />
           <ErrorText>{errors?.category?.message}</ErrorText>
-          <InvisibleInput {...register("category")} type="text" />
+          <InvisibleInput
+            {...register("category")}
+            defaultValue={product.category}
+            type="text"
+          />
         </label>
         <label>
           <Input
             type="text"
+            defaultValue={product.suppliers}
             {...register("suppliers")}
             placeholder="Suppliers"
           />
           <ErrorText>{errors?.suppliers?.message}</ErrorText>
         </label>
         <label>
-          <Input type="text" {...register("stock")} placeholder="Stock" />
+          <Input
+            type="text"
+            {...register("stock")}
+            defaultValue={product.stock}
+            placeholder="Stock"
+          />
           <ErrorText>{errors?.stock?.message}</ErrorText>
         </label>
         <label>
-          <Input type="text" {...register("price")} placeholder="Price" />
+          <Input
+            type="text"
+            {...register("price")}
+            placeholder="Price"
+            defaultValue={product.price}
+          />
           <ErrorText>{errors?.price?.message}</ErrorText>
         </label>
-        <ButtonsModal title="Add" cancelAction={setShowModal}/>
+        <ButtonsModal title="Save" cancelAction={setIsEdit} />
       </Form>
     </Modal>
   );
 };
 
-export default AddProductForm;
+export default EditProductForm;

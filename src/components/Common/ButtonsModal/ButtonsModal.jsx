@@ -1,13 +1,18 @@
 import React from "react";
+import {
+  ButtonCancel,
+  ButtonConfirm,
+  FlexContainer,
+} from "./ButtonsModal.styled";
 
 const ButtonsModal = ({ title, cancelAction }) => {
   return (
-    <div>
-      <button type="submit">{title}</button>
-      <button type="button" onClick={() => cancelAction(false)}>
+    <FlexContainer>
+      <ButtonConfirm type="submit">{title}</ButtonConfirm>
+      <ButtonCancel type="button" onClick={() => cancelAction(false)}>
         Cancel
-      </button>
-    </div>
+      </ButtonCancel>
+    </FlexContainer>
   );
 };
 

@@ -15,7 +15,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 14px;
+  row-gap: 4px;
 
   label {
     width: 100%;
@@ -55,6 +55,7 @@ export const InvisibleInput = styled.input`
 `;
 
 export const ErrorText = styled.p`
+  height: 10px;
   color: var(--expense-color);
   font-size: 8px;
   font-weight: 300;
