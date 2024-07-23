@@ -8,6 +8,12 @@ export const TitleForm = styled.h2`
   margin-top: 26px;
   margin-right: auto;
   margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    line-height: 1.17;
+    margin-bottom: 40px;
+  }
 `;
 
 export const Form = styled.form`
@@ -19,6 +25,18 @@ export const Form = styled.form`
 
   label {
     width: 100%;
+  }
+`;
+
+export const FlexInputContainer = styled.div`
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 224px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
   }
 `;
 
@@ -38,6 +56,10 @@ export const Input = styled.input`
 
   &:focus-within {
     border-color: var(--accent-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 224px;
   }
 `;
 

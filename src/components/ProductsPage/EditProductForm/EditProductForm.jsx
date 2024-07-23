@@ -15,6 +15,7 @@ import {
   TitleForm,
   InvisibleInput,
   ErrorText,
+  FlexInputContainer,
 } from "../AddProductForm/AddProductForm.styled";
 
 const EditProductForm = ({ setIsEdit, product }) => {
@@ -34,7 +35,7 @@ const EditProductForm = ({ setIsEdit, product }) => {
   }, [categoryValue]);
 
   const onSubmit = (data) => {
-    dispatch(editProduct({data, id: product._id }));
+    dispatch(editProduct({ data, id: product._id }));
     setIsEdit(false);
     toast.success("Product edited successfully");
   };
@@ -43,45 +44,49 @@ const EditProductForm = ({ setIsEdit, product }) => {
     <Modal fn={setIsEdit}>
       <TitleForm>Edit a product</TitleForm>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <label>
-          <Input
-            type="text"
-            {...register("name")}
-            defaultValue={product.name}
-            placeholder="Product Info"
-          />
-          <ErrorText>{errors?.name?.message}</ErrorText>
-        </label>
-        <label>
-          <CategorySelect
-            categoryValue={categoryValue}
-            setCategoryValue={setCategoryValue}
-          />
-          <ErrorText>{errors?.category?.message}</ErrorText>
-          <InvisibleInput
-            {...register("category")}
-            defaultValue={product.category}
-            type="text"
-          />
-        </label>
-        <label>
-          <Input
-            type="text"
-            defaultValue={product.suppliers}
-            {...register("suppliers")}
-            placeholder="Suppliers"
-          />
-          <ErrorText>{errors?.suppliers?.message}</ErrorText>
-        </label>
-        <label>
-          <Input
-            type="text"
-            {...register("stock")}
-            defaultValue={product.stock}
-            placeholder="Stock"
-          />
-          <ErrorText>{errors?.stock?.message}</ErrorText>
-        </label>
+        <FlexInputContainer>
+          <label>
+            <Input
+              type="text"
+              {...register("name")}
+              defaultValue={product.name}
+              placeholder="Product Info"
+            />
+            <ErrorText>{errors?.name?.message}</ErrorText>
+          </label>
+          <label>
+            <CategorySelect
+              categoryValue={categoryValue}
+              setCategoryValue={setCategoryValue}
+            />
+            <ErrorText>{errors?.category?.message}</ErrorText>
+            <InvisibleInput
+              {...register("category")}
+              defaultValue={product.category}
+              type="text"
+            />
+          </label>
+        </FlexInputContainer>
+        <FlexInputContainer>
+          <label>
+            <Input
+              type="text"
+              defaultValue={product.suppliers}
+              {...register("suppliers")}
+              placeholder="Suppliers"
+            />
+            <ErrorText>{errors?.suppliers?.message}</ErrorText>
+          </label>
+          <label>
+            <Input
+              type="text"
+              {...register("stock")}
+              defaultValue={product.stock}
+              placeholder="Stock"
+            />
+            <ErrorText>{errors?.stock?.message}</ErrorText>
+          </label>
+        </FlexInputContainer>
         <label>
           <Input
             type="text"

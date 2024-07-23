@@ -15,6 +15,7 @@ import {
   TitleForm,
   InvisibleInput,
   ErrorText,
+  FlexInputContainer,
 } from "./AddProductForm.styled";
 
 const AddProductForm = ({ setShowModal }) => {
@@ -43,39 +44,43 @@ const AddProductForm = ({ setShowModal }) => {
     <Modal fn={setShowModal}>
       <TitleForm>Add a new product</TitleForm>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <label>
-          <Input
-            type="text"
-            {...register("name")}
-            placeholder="Product Info"
-          />
-          <ErrorText>{errors?.name?.message}</ErrorText>
-        </label>
-        <label>
-          <CategorySelect
-            categoryValue={categoryValue}
-            setCategoryValue={setCategoryValue}
-          />
-          <ErrorText>{errors?.category?.message}</ErrorText>
-          <InvisibleInput {...register("category")} type="text" />
-        </label>
-        <label>
-          <Input
-            type="text"
-            {...register("suppliers")}
-            placeholder="Suppliers"
-          />
-          <ErrorText>{errors?.suppliers?.message}</ErrorText>
-        </label>
-        <label>
-          <Input type="text" {...register("stock")} placeholder="Stock" />
-          <ErrorText>{errors?.stock?.message}</ErrorText>
-        </label>
+        <FlexInputContainer>
+          <label>
+            <Input
+              type="text"
+              {...register("name")}
+              placeholder="Product Info"
+            />
+            <ErrorText>{errors?.name?.message}</ErrorText>
+          </label>
+          <label>
+            <CategorySelect
+              categoryValue={categoryValue}
+              setCategoryValue={setCategoryValue}
+            />
+            <ErrorText>{errors?.category?.message}</ErrorText>
+            <InvisibleInput {...register("category")} type="text" />
+          </label>
+        </FlexInputContainer>
+        <FlexInputContainer>
+          <label>
+            <Input
+              type="text"
+              {...register("suppliers")}
+              placeholder="Suppliers"
+            />
+            <ErrorText>{errors?.suppliers?.message}</ErrorText>
+          </label>
+          <label>
+            <Input type="text" {...register("stock")} placeholder="Stock" />
+            <ErrorText>{errors?.stock?.message}</ErrorText>
+          </label>
+        </FlexInputContainer>
         <label>
           <Input type="text" {...register("price")} placeholder="Price" />
           <ErrorText>{errors?.price?.message}</ErrorText>
         </label>
-        <ButtonsModal title="Add" cancelAction={setShowModal}/>
+        <ButtonsModal title="Add" cancelAction={setShowModal} />
       </Form>
     </Modal>
   );

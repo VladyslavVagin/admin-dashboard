@@ -24,6 +24,11 @@ export const ModalContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  @media (min-width: 768px) {
+    max-width: 536px;
+    padding: 14px 40px 60px 40px;
+  }
 `;
 
 export const CloseButton = styled.button`
@@ -45,5 +50,16 @@ export const CloseButton = styled.button`
     min-height: 24px;
     height: 24px;
     stroke: var(--main-black);
+  }
+
+  @media screen and (min-width: 768px) {
+    right: 14px;
+
+    svg {
+      min-width: 26px;
+      width: 26px;
+      min-height: 26px;
+      height: 26px;
+    }
   }
 `;

@@ -6,6 +6,11 @@ export const FlexContainer = styled.div`
   justify-content: center;
   column-gap: 8px;
   margin-top: 26px;
+
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    justify-content: flex-start;
+  }
 `;
 
 export const ButtonConfirm = styled.button`
@@ -24,6 +29,11 @@ export const ButtonConfirm = styled.button`
   &:focus {
     background-color: var(--hover-accent);
   }
+
+  @media screen and (min-width: 768px) {
+    width: 133px;
+    font-size: 14px;
+  }
 `;
 
 export const ButtonCancel = styled.button`
@@ -41,5 +51,10 @@ export const ButtonCancel = styled.button`
   &:hover,
   &:focus {
     background-color: var(--icons-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 133px;
+    font-size: 14px;
   }
 `;

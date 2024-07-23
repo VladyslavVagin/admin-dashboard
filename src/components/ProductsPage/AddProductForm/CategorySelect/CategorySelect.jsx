@@ -1,14 +1,16 @@
 import React from "react";
 import Select from "react-select";
+import { useMediaQuery } from "react-responsive";
 import { useProducts } from "../../../../hooks/useProducts";
 
 const CategorySelect = ({ categoryValue, setCategoryValue }) => {
+  const is768 = useMediaQuery({ minWidth: 768 });
   const { categories } = useProducts();
-  const categoriesData = [...categories.map((category) => {
-    return { label: category, value: category };
-  })];
-
-
+  const categoriesData = [
+    ...categories.map((category) => {
+      return { label: category, value: category };
+    }),
+  ];
 
   const handleByCategory = (e) => setCategoryValue(e?.value);
   const selectValue =
@@ -29,7 +31,7 @@ const CategorySelect = ({ categoryValue, setCategoryValue }) => {
           control: (baseStyles) => ({
             ...baseStyles,
             border: "1px solid var(--border-color)",
-            width: "100%",
+            width: is768 ? "224px" : "100%",
             height: "44px",
             background: "var(--white-color)",
             paddingLeft: "8px",
@@ -80,9 +82,9 @@ const CategorySelect = ({ categoryValue, setCategoryValue }) => {
           }),
           menu: (baseStyles) => ({
             ...baseStyles,
-            width: "100%",
+            width: is768 ? "224px" : "100%",
             borderRadius: "15px",
-            background: "var(--accent-color)"
+            background: "var(--accent-color)",
           }),
         }}
       />
