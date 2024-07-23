@@ -95,7 +95,7 @@ export const deleteProduct = createAsyncThunk(
 
 export const editProduct = createAsyncThunk(
   "products/edit",
-  async ({ data, _id }, thunkAPI) => {
+  async ({ data, id }, thunkAPI) => {
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
 
@@ -105,7 +105,7 @@ export const editProduct = createAsyncThunk(
 
     try {
       setAuthHeader(persistedToken);
-      const res = await axios.put(`/api/products/${_id}`, data);
+      const res = await axios.put(`/api/products/${id}`, data);
       console.log(res.data);
       return res.data;
     } catch (error) {

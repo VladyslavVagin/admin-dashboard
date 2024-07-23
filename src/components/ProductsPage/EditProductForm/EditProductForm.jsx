@@ -34,7 +34,7 @@ const EditProductForm = ({ setIsEdit, product }) => {
   }, [categoryValue]);
 
   const onSubmit = (data) => {
-    dispatch(editProduct({ ...data, _id: product._id }));
+    dispatch(editProduct({data, id: product._id }));
     setIsEdit(false);
     toast.success("Product edited successfully");
   };
