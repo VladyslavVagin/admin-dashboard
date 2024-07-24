@@ -30,4 +30,21 @@ export const AddProductContainer = styled.div`
     line-height: 1.29;
     color: var(--main-black);
   }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0px;
+
+    button {
+      min-width: 44px;
+      max-width: 44px;
+      max-height: 44px;
+      min-height: 44px;
+      transition: background-color var(--hover-effect);
+
+      &:hover,
+      &:focus {
+        background-color: var(--hover-accent);
+      }
+    }
+  }
 `;

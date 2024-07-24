@@ -2,6 +2,8 @@ import React, { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { ToastContainer } from "react-toastify";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import Header from "../Header/Header";
 import SideBar from "../Sidebar/SideBar";
 import { MainSection } from "./SharedLayout.styled";
@@ -11,14 +13,16 @@ const SharedLayout = () => {
 
   return (
     <>
-      <Header />
-      <MainSection>
-        {isDesktop && <SideBar />}
-        <Suspense fallback={<div>Loading...</div>}>
-          <Outlet />
-        </Suspense>
-      </MainSection>
-      <ToastContainer />
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <Header />
+        <MainSection>
+          {isDesktop && <SideBar />}
+          <Suspense fallback={<div>Loading...</div>}>
+            <Outlet />
+          </Suspense>
+        </MainSection>
+        <ToastContainer />
+      </LocalizationProvider>
     </>
   );
 };

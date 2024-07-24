@@ -1,13 +1,17 @@
 // @ts-nocheck
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getSuppliers } from "../../redux/suppliers/operations";
 import { PageContainer } from "../../components/Common/PageContainer";
 import FilterSuppliers from "../../components/Suppliers/FilterSuppliers/FilterSuppliers";
 import SuppliersTable from "../../components/Suppliers/SuppliersTable/SuppliersTable";
+import AddSupplierBtn from "../../components/Suppliers/AddSupplierBtn/AddSupplierBtn";
+import AddSupplierForm from "../../components/Suppliers/AddSupplierForm/AddSupplierForm";
+import { FlexContainer } from "./Suppliers.styled";
 
 const Suppliers = () => {
   const dispatch = useDispatch();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     dispatch(getSuppliers());
@@ -15,9 +19,11 @@ const Suppliers = () => {
 
   return (
     <PageContainer>
-      <div>
+      {isModalOpen && <AddSupplierForm setIsModalOpen={setIsModalOpen} />}
+      <FlexContainer>
         <FilterSuppliers />
-      </div>
+        <AddSupplierBtn setIsModalOpen={setIsModalOpen} />
+      </FlexContainer>
       <SuppliersTable />
     </PageContainer>
   );

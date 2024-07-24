@@ -5,7 +5,7 @@ export const Status = styled.span`
  display: flex;
  align-items: center;
  justify-content: center;
- color: ${({ status }) => status === "Active" ? "var(--hover-accent)" : "var(--expense-color)"};
+ color: ${({ status }) => status === "Active" ? "var(--accent-color)" : "var(--expense-color)"};
  background: ${({ status }) => status === "Active" ? "var(--income-bg)" : "var(--expense-bg)"};
  font-size: 14px;
  font-weight: 500;

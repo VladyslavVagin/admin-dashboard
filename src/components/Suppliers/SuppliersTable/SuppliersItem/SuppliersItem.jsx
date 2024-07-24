@@ -1,5 +1,6 @@
 // @ts-nocheck
 import React from "react";
+import EditBtn from "../../EditBtn/EditBtn";
 import { ColumnContent } from "../../../ProductsPage/ProductsTable/ProductItem/ProductItem.styled";
 import { Status } from "./SuppliersItem.styled";
 
@@ -29,7 +30,7 @@ const SuppliersItem = ({ supplier }) => {
           <Status status={status.toString()}>{status}</Status>
         </ColumnContent>
         <ColumnContent>
-          <p>Edit</p>
+          <EditBtn />
         </ColumnContent>
       </tr>
     </>
