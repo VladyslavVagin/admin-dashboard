@@ -64,3 +64,17 @@ address {
 .css-1u9des2-indicatorSeparator {
   display: none;
 }
+
+
+.css-tj5bde-Svg {
+  stroke: var(--placeholder-color) !important;
+  fill: var(--placeholder-color) !important;
+}
+
+.css-1jqq78o-placeholder {
+  color: var(--placeholder-color) !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border: none ! important ;
+}

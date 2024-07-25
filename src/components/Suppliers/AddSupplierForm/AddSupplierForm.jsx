@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
@@ -16,6 +16,7 @@ import {
 } from "../../ProductsPage/AddProductForm/AddProductForm.styled";
 
 const AddSupplierForm = ({ setIsModalOpen }) => {
+  const [dateValue, setDateValue] = useState("");
   const {
     register,
     handleSubmit,
@@ -53,7 +54,7 @@ const AddSupplierForm = ({ setIsModalOpen }) => {
             <ErrorText>{errors?.suppliers?.message}</ErrorText>
           </label>
           <label>
-            <DeliveryDate />
+            <DeliveryDate setDateValue={setDateValue} />
             <InvisibleInput type="text" {...register("date")} />
             <ErrorText>{errors?.date?.message}</ErrorText>
           </label>
