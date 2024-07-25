@@ -35,3 +35,12 @@ export const addSupplierSchema = yup.object().shape({
   amount: yup.string().required(),
   status: yup.string().oneOf(['Active', 'Deactive']).required(),
 });
+
+export const editSupplierSchema = yup.object().shape({
+  name: yup.string().min(4).required(),
+  address: yup.string().required(),
+  suppliers: yup.string().required(),
+  date: yup.string().required(),
+  amount: yup.string().required(),
+  status: yup.string().oneOf(['Active', 'Deactive']).required(),
+});

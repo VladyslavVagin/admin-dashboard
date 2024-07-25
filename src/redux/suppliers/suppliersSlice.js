@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { createSlice } from "@reduxjs/toolkit";
-import { getSuppliers, getSuppliersByQuery, addSupplier } from "./operations";
+import { getSuppliers, getSuppliersByQuery, addSupplier, editSupplier } from "./operations";
 
 const initialState = {
   suppliers: [],
@@ -49,7 +49,17 @@ const suppliersSlice = createSlice({
       .addCase(addSupplier.rejected, (state, _) => {
         state.isLoading = false;
         state.isError = true;
-      });
+      })
+      .addCase(editSupplier.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(editSupplier.fulfilled, (state, { payload }) => {
+        state.suppliers = state.suppliers.map((supplier) =>
+          supplier._id === payload._id ? payload : supplier
+        );
+        state.isLoading = false;
+        state.isError = false;
+      })
   },
 });
 

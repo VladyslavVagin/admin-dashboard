@@ -1,9 +1,11 @@
+// @ts-nocheck
 import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import dayjs from "dayjs";
 import { DatePicker } from "@mui/x-date-pickers";
 import IconCalendar from "./IconCalendar/IconCalendar";
 
-const DeliveryDate = ({ setDateValue }) => {
+const DeliveryDate = ({ setDateValue, dateValue }) => {
   const tablet = useMediaQuery({ minWidth: 768 });
   const [isOpen, setIsOpen] = useState(false);
 
@@ -20,10 +22,13 @@ const DeliveryDate = ({ setDateValue }) => {
     }
   };
 
+  console.log(dayjs(dateValue).format("LL"));
+
   return (
     <>
       <DatePicker
         label="Delivery Date"
+        defaultValue={dateValue && dayjs(dateValue)} 
         format="LL"
         onChange={handleDatePicker}
         onOpen={() => setIsOpen(true)}
@@ -42,7 +47,8 @@ const DeliveryDate = ({ setDateValue }) => {
                 fontWeight: "500",
                 color: "var(--placeholder-color)",
                 top: "4px",
-                display: isOpen ? "none" : "visible",
+                paddingLeft: "8px",
+                display: isOpen || dateValue ? "none" : "visible",
               },
               ".MuiInputBase-root": {
                 width: tablet ? "224px" : "295px",
@@ -52,6 +58,7 @@ const DeliveryDate = ({ setDateValue }) => {
                 letterSpacing: "-0.03em",
                 fontWeight: "500",
                 transition: "var(--hover-effect)",
+                paddingLeft: "8px",
                 borderRadius: "30px",
                 outline: "none",
                 border: "1px solid var(--border-color)",

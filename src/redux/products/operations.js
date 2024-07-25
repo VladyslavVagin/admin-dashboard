@@ -106,7 +106,6 @@ export const editProduct = createAsyncThunk(
     try {
       setAuthHeader(persistedToken);
       const res = await axios.put(`/api/products/${id}`, data);
-      console.log(res.data);
       return res.data;
     } catch (error) {
       toast.error("ERROR, Unable to edit product");
