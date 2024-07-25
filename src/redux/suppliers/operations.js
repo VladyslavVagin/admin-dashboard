@@ -89,7 +89,6 @@ export const editSupplier = createAsyncThunk(
       setAuthHeader(persistedToken);
       const res = await axios.put(`/api/suppliers/${id}`, data);
       toast.success("Supplier edited successfully");
-      console.log(res.data);
       return res.data;
     } catch (error) {
       toast.error("ERROR, Connection error");

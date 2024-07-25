@@ -17,7 +17,6 @@ import {
   ErrorText,
   InvisibleInput,
 } from "../../ProductsPage/AddProductForm/AddProductForm.styled";
-import { toast } from "react-toastify";
 
 const EditSupplierForm = ({ setIsModalOpen, supplier }) => {
   const dispatch = useDispatch();
@@ -90,7 +89,7 @@ const EditSupplierForm = ({ setIsModalOpen, supplier }) => {
             <Input
               type="text"
               {...register("amount")}
-              defaultValue={supplier.amount.substring(1)}
+              defaultValue={supplier.amount}
               placeholder="Amount"
             />
             <ErrorText>{errors?.amount?.message}</ErrorText>

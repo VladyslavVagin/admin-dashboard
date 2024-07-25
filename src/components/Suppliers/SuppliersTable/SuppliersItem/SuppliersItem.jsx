@@ -7,7 +7,10 @@ import { Status } from "./SuppliersItem.styled";
 
 const SuppliersItem = ({ supplier }) => {
   const { name, address, status, amount, date, suppliers } = supplier;
-  const amountValue = amount.substring(1);
+  let amountValue = amount;
+  if (amount.charAt(0) === "৳") {
+    amountValue = amount.substring(1);
+  }
   const [openEditModal, setOpenEditModal] = useState(false);
 
   return (

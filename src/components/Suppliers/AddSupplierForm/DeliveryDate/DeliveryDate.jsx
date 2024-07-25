@@ -22,8 +22,6 @@ const DeliveryDate = ({ setDateValue, dateValue }) => {
     }
   };
 
-  console.log(dayjs(dateValue).format("LL"));
-
   return (
     <>
       <DatePicker
