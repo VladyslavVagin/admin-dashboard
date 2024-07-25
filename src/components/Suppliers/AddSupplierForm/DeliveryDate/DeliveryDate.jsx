@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { DatePicker } from "@mui/x-date-pickers";
 import IconCalendar from "./IconCalendar/IconCalendar";
 
 const DeliveryDate = ({ setDateValue }) => {
   const tablet = useMediaQuery({ minWidth: 768 });
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleDatePicker = (newValue) => {
-    const date = new Date(newValue.$y, newValue.$M, newValue.$D);
+    const date = new Date(newValue?.$y, newValue?.$M, newValue?.$D);
     const formattedDate = date.toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
       day: "numeric",
     });
     setDateValue(formattedDate);
+    if(formattedDate) {
+      setIsOpen(true);
+    }
   };
 
   return (
@@ -22,6 +26,8 @@ const DeliveryDate = ({ setDateValue }) => {
         label="Delivery Date"
         format="LL"
         onChange={handleDatePicker}
+        onOpen={() => setIsOpen(true)}
+        disableOpenPicker={false}
         slotProps={{
           textField: {
             size: "small",
@@ -36,9 +42,10 @@ const DeliveryDate = ({ setDateValue }) => {
                 fontWeight: "500",
                 color: "var(--placeholder-color)",
                 top: "4px",
+                display: isOpen ? "none" : "visible",
               },
               ".MuiInputBase-root": {
-                width: tablet ? "224px" : "144px",
+                width: tablet ? "224px" : "295px",
                 height: "40px",
                 fontSize: "12px",
                 lineHeight: "1.29",

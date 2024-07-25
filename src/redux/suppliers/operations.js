@@ -51,3 +51,26 @@ export const getSuppliersByQuery = createAsyncThunk(
     }
   }
 );
+
+export const addSupplier = createAsyncThunk(
+  "suppliers/add",
+  async (data, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue("Unable to fetch user");
+    }
+
+    try {
+      setAuthHeader(persistedToken);
+      const res = await axios.post("/api/suppliers", data);
+      toast.success("Supplier added successfully");
+      console.log(res.data);
+      return res.data;
+    } catch (error) {
+      toast.error("ERROR, Connection error");
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

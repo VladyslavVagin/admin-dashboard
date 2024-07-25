@@ -1,5 +1,6 @@
+// @ts-nocheck
 import { createSlice } from "@reduxjs/toolkit";
-import { getSuppliers, getSuppliersByQuery } from "./operations";
+import { getSuppliers, getSuppliersByQuery, addSupplier } from "./operations";
 
 const initialState = {
   suppliers: [],
@@ -34,6 +35,18 @@ const suppliersSlice = createSlice({
         state.isError = false;
       })
       .addCase(getSuppliersByQuery.rejected, (state, _) => {
+        state.isLoading = false;
+        state.isError = true;
+      })
+      .addCase(addSupplier.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(addSupplier.fulfilled, (state, { payload }) => {
+        state.suppliers = [...state.suppliers, payload];
+        state.isLoading = false;
+        state.isError = false;
+      })
+      .addCase(addSupplier.rejected, (state, _) => {
         state.isLoading = false;
         state.isError = true;
       });
