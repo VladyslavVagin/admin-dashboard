@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getOrders } from "../../redux/orders/operations";
+import { getOrders, getOrdersByQuery } from "../../redux/orders/operations";
 import { PageContainer } from "../../components/Common/PageContainer";
 import FilterBar from "../../components/FilterBar/FilterBar";
 import OrdersTable from "../../components/OrdersTable/OrdersTable";
@@ -15,7 +15,7 @@ const Orders = () => {
 
   return (
     <PageContainer>
-      <FilterBar />
+      <FilterBar fn={getOrders} fnQuery={getOrdersByQuery} placeholder="User Name" />
       <OrdersTable />
     </PageContainer>
   );

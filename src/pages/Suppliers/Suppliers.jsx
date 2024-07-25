@@ -1,9 +1,12 @@
 // @ts-nocheck
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { getSuppliers } from "../../redux/suppliers/operations";
+import {
+  getSuppliers,
+  getSuppliersByQuery,
+} from "../../redux/suppliers/operations";
 import { PageContainer } from "../../components/Common/PageContainer";
-import FilterSuppliers from "../../components/Suppliers/FilterSuppliers/FilterSuppliers";
+import FilterBar from "../../components/FilterBar/FilterBar";
 import SuppliersTable from "../../components/Suppliers/SuppliersTable/SuppliersTable";
 import AddSupplierBtn from "../../components/Suppliers/AddSupplierBtn/AddSupplierBtn";
 import AddSupplierForm from "../../components/Suppliers/AddSupplierForm/AddSupplierForm";
@@ -21,7 +24,11 @@ const Suppliers = () => {
     <PageContainer>
       {isModalOpen && <AddSupplierForm setIsModalOpen={setIsModalOpen} />}
       <FlexContainer>
-        <FilterSuppliers />
+        <FilterBar
+          fn={getSuppliers}
+          fnQuery={getSuppliersByQuery}
+          placeholder="User Name"
+        />
         <AddSupplierBtn setIsModalOpen={setIsModalOpen} />
       </FlexContainer>
       <SuppliersTable />

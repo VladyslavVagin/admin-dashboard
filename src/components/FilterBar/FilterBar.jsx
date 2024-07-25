@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
-import { getOrdersByQuery, getOrders } from "../../redux/orders/operations";
 import sprite from "../../assets/sprite.svg";
 import { schemaFilter } from "../../schemas/shemas";
 import {
@@ -14,7 +13,7 @@ import {
   ResetBtn,
 } from "./FilterBar.styled";
 
-const FilterBar = () => {
+const FilterBar = ({ fn, fnQuery, placeholder }) => {
   const dispatch = useDispatch();
   const [showReset, setShowReset] = useState(false);
   const {
@@ -26,14 +25,14 @@ const FilterBar = () => {
 
   const onSubmit = (data) => {
     if (data.query !== "" || data.query !== null) {
-      dispatch(getOrdersByQuery(data.query));
+      dispatch(fnQuery(data.query));
       setShowReset(true);
     }
   };
 
   const handleReset = () => {
     setValue("query", "");
-    dispatch(getOrders());
+    dispatch(fn());
     setShowReset(false);
   };
 
@@ -44,7 +43,7 @@ const FilterBar = () => {
           <input
             type="text"
             {...register("query")}
-            placeholder="User Name"
+            placeholder={placeholder}
             required
           />
           {showReset && (

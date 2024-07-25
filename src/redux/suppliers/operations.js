@@ -43,7 +43,6 @@ export const getSuppliersByQuery = createAsyncThunk(
     try {
       setAuthHeader(persistedToken);
       const res = await axios.get(`/api/suppliers?query=${query}`);
-      console.log(res.data);
       return res.data;
     } catch (error) {
       toast.error("ERROR, Connection error");
