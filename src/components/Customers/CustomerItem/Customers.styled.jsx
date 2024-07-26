@@ -10,8 +10,8 @@ export const ColumnContent = styled.td`
   text-align: flex-start;
 
   &:first-of-type {
-    min-width: 160px;
-    max-width: 160px;
+    min-width: 190px;
+    max-width: 190px;
   }
 
   &:nth-of-type(2) {
@@ -20,8 +20,8 @@ export const ColumnContent = styled.td`
   }
 
   &:nth-of-type(3) {
-    min-width: 240px;
-    max-width: 240px;
+    min-width: 280px;
+    max-width: 280px;
   }
 
   &:nth-of-type(4) {
