@@ -2,6 +2,7 @@
 <img height="150" align="right" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXJvZDU5cHl1eWNpMWZ1bG1mMm5qNjMzMjdoOHplcTV2b2hscHNyeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NsDgJPXkk5CK7pPYkJ/giphy.gif" />
 <h3>Type: Individual MERN stack project</h3> 
 <h3>Role: Fullstack Web Developer</h3>
+
 ##
 <h4>Technical skills:</h4>
 <p>React, React Router, Redux, Redux Toolkit, Axios, React-hook-form, react-select, react-responsive, yup, Material UI, emotion-styled, JavaScript, Redux-Persist</p>
