@@ -26,8 +26,7 @@ export const ColumnContent = styled.td`
   &:nth-of-type(5),
   &:nth-of-type(2) {
     padding-right: 8px;
-    padding-left: 8px;
-    text-align: center;
+    padding-left: 24px;
   }
 
   &:not(:last-of-type) {
@@ -63,23 +62,27 @@ export const StatusOrder = styled.span`
   min-height: 25px;
   height: 25px;
   background-color: ${({ status }) =>
-      status === "Completed"
-        ? "rgba(89, 177, 122, 0.1)"
-        : status === "Confirmed"
-        ? "rgba(128, 89, 228, 0.1)"
-        : status === "Pending"
-        ? "rgba(247, 144, 66, 0.1)"
-        : status === "Cancelled"
-        ? "rgba(232, 80, 80, 0.1)"
-        : "rgba(112, 166, 232, 0.1)"};
+    status === "Completed"
+      ? "rgba(89, 177, 122, 0.1)"
+      : status === "Confirmed"
+      ? "rgba(128, 89, 228, 0.1)"
+      : status === "Pending"
+      ? "rgba(247, 144, 66, 0.1)"
+      : status === "Cancelled"
+      ? "rgba(232, 80, 80, 0.1)"
+      : "rgba(112, 166, 232, 0.1)"};
   color: ${({ status }) =>
-      status === "Completed"
-        ? "var(--accent-color)"
-        : status === "Confirmed"
-        ? "#8059e4"
-        : status === "Pending"
-        ? "#f79042"
-        : status === "Cancelled"
-        ? "#e85050"
-        : "#70a6e8"};
+    status === "Completed"
+      ? "var(--accent-color)"
+      : status === "Confirmed"
+      ? "#8059e4"
+      : status === "Pending"
+      ? "#f79042"
+      : status === "Cancelled"
+      ? "#e85050"
+      : status === "Processing"
+      ? "yellow"
+      : status === "Delivered"
+      ? "brown"
+      : "#70a6e8"};
 `;

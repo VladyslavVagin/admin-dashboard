@@ -6,7 +6,7 @@ export const ColumnContent = styled.td`
   font-weight: 500;
   line-height: 1.17;
   border-bottom: 1px solid var(--border-color);
-  padding: 14px 0;
+  padding: 14px 8px 14px 24px;
   text-align: flex-start;
 
   &:nth-of-type(3),
@@ -14,8 +14,7 @@ export const ColumnContent = styled.td`
   &:nth-of-type(5),
   &:nth-of-type(2) {
     padding-right: 8px;
-    padding-left: 8px;
-    text-align: center;
+    padding-left: 24px;
   }
 
   &:not(:last-of-type) {
@@ -26,11 +25,7 @@ export const ColumnContent = styled.td`
     padding-left: 14px;
   }
 
-  @media screen and (min-width: 375px) {
-    font-size: 12px;
-  }
-
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1200px) {
     font-size: 16px;
     line-height: 1.12;
     padding: 20px 0;

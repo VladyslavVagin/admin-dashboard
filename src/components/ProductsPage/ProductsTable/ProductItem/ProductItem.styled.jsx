@@ -19,8 +19,7 @@ export const ColumnContent = styled.td`
   &:nth-of-type(5),
   &:nth-of-type(2) {
     padding-right: 8px;
-    padding-left: 8px;
-    text-align: center;
+    padding-left: 24px;
   }
 
   &:nth-of-type(2) {
