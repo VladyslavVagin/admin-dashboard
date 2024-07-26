@@ -3,9 +3,9 @@ import styled from "@emotion/styled";
 
 export const ContentUser = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  row-gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 8px;
 
   img {
     border-radius: 50%;

@@ -1,14 +1,15 @@
 // @ts-nocheck
 import React from "react";
+import imgAvatar from "../../../assets/images/avatar/avatar.png";
 import { ColumnContent, ContentUser, StatusOrder } from "./OrderItem.styled";
 
 const OrderItem = ({ order }) => {
   return (
     <>
-      <tr key={order._id}>
+      <tr>
         <ColumnContent>
           <ContentUser>
-            <img src={order.photo} alt={order.name} width={24} height={24} />
+            <img src={order.photo || imgAvatar} alt={order.name} width={24} height={24} />
             <p>{order.name}</p>
           </ContentUser>
         </ColumnContent>
