@@ -36,3 +36,15 @@ The layout is valid
 ##
 <h4>Orders page</h4>
 <p>Orders page includes information about orders and their status. There is filter for filter orders by user name.</p>
+
+##
+<h4>Products page</h4>
+<p>Products page includes list of all products with filter by Product name. Admin can add new product, delete product or edit them.</p>
+
+##
+<h4>Suppliers page</h4>
+<p>Suppliers page includes list of all suppliers with filter by user name. Admin can create a new supplier or edit them.</p>
+
+##
+<h4>Customers page</h4>
+<p>Customers page include list of all customers with filter by user name.</p>
