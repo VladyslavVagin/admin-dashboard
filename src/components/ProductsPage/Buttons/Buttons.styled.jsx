@@ -8,10 +8,8 @@ export const FlexContainer = styled.div`
 `;
 
 export const ButtonEdit = styled.button`
-  min-width: 32px;
-  max-width: 32px;
-  min-height: 32px;
-  max-height: 32px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -21,6 +19,13 @@ export const ButtonEdit = styled.button`
   background-color: transparent;
   transition: all var(--hover-effect);
 
+  svg {
+    min-width: 16px;
+    max-width: 16px;
+    min-height: 16px;
+    max-height: 16px;
+  }
+
   &:hover,
   &:focus {
     transform: scale(1.2);
@@ -28,10 +33,8 @@ export const ButtonEdit = styled.button`
 `;
 
 export const ButtonDelete = styled.button`
-  min-width: 32px;
-  max-width: 32px;
-  min-height: 32px;
-  max-height: 32px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -40,6 +43,13 @@ export const ButtonDelete = styled.button`
   border: 1px solid var(--expense-color);
   background-color: transparent;
   transition: all var(--hover-effect);
+
+  svg {
+    min-width: 16px;
+    max-width: 16px;
+    min-height: 16px;
+    max-height: 16px;
+  }
 
   &:hover,
   &:focus {

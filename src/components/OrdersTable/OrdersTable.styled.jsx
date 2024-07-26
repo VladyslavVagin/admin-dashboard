@@ -67,13 +67,11 @@ export const Pagination = styled.div`
 `;
 
 export const PageBtn = styled.button`
-  min-width: 12px;
-  max-width: 12px;
-  max-height: 12px;
-  min-height: 12px;
+  width: 12px;
+  height: 12px;
   border: none;
   outline: none;
-  border-radius: 50%;
+  border-radius: 6px;
   background-color: ${({ isActive }) =>
     isActive ? "var(--accent-color)" : "#e7f1ed"};
 `;
