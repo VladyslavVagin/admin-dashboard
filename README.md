@@ -26,6 +26,13 @@ The layout is valid
 <li>✔ Add page favicon display</li>
 </ul>
 ##
+<h4>Dashboard page (main)</h4>
 
+<p>First of all Admin should login into app with credentials (email and password)</p>
+<p>Then he will navigate to Dashboard page with general statistic, recent customers and latest income/expenses.</p>
+<p>Admin dashboard has 5 private pages: Dashboard (main) page, Orders page, Products page, Suppliers page and Customers page. For navigation between pages admin should use navigation menu. Until 1440px menu can be open with burger's button. In burger menu also exist button for Logout.</p>
+<p>Also from dashboard page admin can directly navigate to Products page, Suppliers and Customers page from statistic section.</p>
 
-
+##
+<h4>Orders page</h4>
+<p>Orders page includes information about orders and their status. There is filter for filter orders by user name.</p>
