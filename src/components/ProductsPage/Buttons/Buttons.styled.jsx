@@ -8,8 +8,10 @@ export const FlexContainer = styled.div`
 `;
 
 export const ButtonEdit = styled.button`
-  width: 32px;
-  height: 32px;
+  min-width: 32px;
+  max-width: 32px;
+  min-height: 32px;
+  max-height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -26,8 +28,10 @@ export const ButtonEdit = styled.button`
 `;
 
 export const ButtonDelete = styled.button`
-  width: 32px;
-  height: 32px;
+  min-width: 32px;
+  max-width: 32px;
+  min-height: 32px;
+  max-height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;

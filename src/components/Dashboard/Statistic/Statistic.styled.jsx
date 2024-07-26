@@ -9,6 +9,7 @@ export const ListStats = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  margin: 24px 0;
 
   @media screen and (min-width: 375px) {
     flex-direction: row;

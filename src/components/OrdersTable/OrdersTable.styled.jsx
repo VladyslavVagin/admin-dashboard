@@ -67,8 +67,10 @@ export const Pagination = styled.div`
 `;
 
 export const PageBtn = styled.button`
-  width: 12px;
-  height: 12px;
+  min-width: 12px;
+  max-width: 12px;
+  max-height: 12px;
+  min-height: 12px;
   border: none;
   outline: none;
   border-radius: 50%;
