@@ -38,7 +38,7 @@ const AddProductForm = ({ setShowModal }) => {
     if (suppliersValue) {
       setValue("suppliers", suppliersValue);
     }
-  }, [categoryValue, suppliersValue]);
+  }, [categoryValue, suppliersValue, setValue]);
 
   const onSubmit = (data) => {
     dispatch(addProduct(data));

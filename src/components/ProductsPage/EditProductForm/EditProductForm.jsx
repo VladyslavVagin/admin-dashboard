@@ -38,7 +38,7 @@ const EditProductForm = ({ setIsEdit, product }) => {
     if (suppliersValue) {
       setValue("suppliers", suppliersValue);
     }
-  }, [categoryValue, suppliersValue]);
+  }, [categoryValue, suppliersValue, setValue]);
 
   const onSubmit = (data) => {
     dispatch(editProduct({ data, id: product._id }));
