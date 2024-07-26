@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+<h2 align="left">E-Pharmacy Admin Dashboard (Frontend part)</h2>
+<img height="150" align="right" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXJvZDU5cHl1eWNpMWZ1bG1mMm5qNjMzMjdoOHplcTV2b2hscHNyeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NsDgJPXkk5CK7pPYkJ/giphy.gif" />
+<h3>Type: Individual MERN stack project</h3> 
+<h3>Role: Fullstack Web Developer</h3
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##
+<h4>Task: create admin dashboard for e-pharmacy web project due to <a target="_blank" href="https://docs.google.com/spreadsheets/d/1ufIlG2HwqppnY1by3HD4l6TVGq4EoW_o8b-ubA-pQq4/edit?gid=0#gid=0">Technical requirements</a></h4>
+<h4>Layout: this project was created due to <a href="https://www.figma.com/file/z1JklHHxX8kTGo3zWvlzat/Admin-dashboard?type=design&node-id=0-1&mode=design&t=HXVayV2hGgJVuVyc-0" target="_blank">Figma layout</a></h4>
 
-## Available Scripts
+##
+<h3>Description</h3>
+<p>Develop a web application in React for a Dashboard page that displays information about income, expenses, and other statistical data of a medical store. The layout of the Dashboard page is provided, and it should be implemented with consideration of both design and functionality.</p>
+The layout is responsive, except for mobile devices. Breakpoints:
+<ul>
+   <li>Mobile: fluid layout starting from 320px, becomes responsive from 375px;</li>
+   <li>Tablet: from 768px;</li>
+   <li>Desktop: from 1440px;</li>
+</ul>
+The layout is valid
+<ul>
+<li>✔ Connect fonts</li>
+<li>✔ Optimize the sizes of vector and raster graphics</li>
+<li>✔ Ensure support for displaying images on retina screens</li>
+<li>✔ Optimize image loading</li>
+<li>✔ Connect all icons through a sprite</li>
+<li>✔ Add page favicon display</li>
+</ul>
+##
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
