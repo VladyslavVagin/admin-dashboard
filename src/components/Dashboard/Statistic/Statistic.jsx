@@ -9,7 +9,7 @@ const Statistic = () => {
   return (
     <section>
       <ListStats>
-        <ListItem>
+        <ListItem to="/products">
           <div>
             <svg width={18} height={18}>
               <use xlinkHref={`${sprite}#icon-currency`}></use>
@@ -18,7 +18,7 @@ const Statistic = () => {
           </div>
           <span>{allProducts}</span>
         </ListItem>
-        <ListItem>
+        <ListItem to="/suppliers">
           <div>
             <svg width={18} height={18}>
               <use xlinkHref={`${sprite}#icon-ci_users`}></use>
@@ -27,7 +27,7 @@ const Statistic = () => {
           </div>
           <span>{allSuppliers}</span>
         </ListItem>
-        <ListItem>
+        <ListItem to="/customers">
           <div>
             <svg width={18} height={18}>
               <use xlinkHref={`${sprite}#icon-ci_users`}></use>

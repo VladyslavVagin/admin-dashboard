@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
-export const ListStats = styled.ul`
+export const ListStats = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -23,7 +24,7 @@ export const ListStats = styled.ul`
   }
 `;
 
-export const ListItem = styled.li`
+export const ListItem = styled(Link)`
   width: 156px;
   height: 98px;
   border-radius: 8px;
@@ -33,9 +34,15 @@ export const ListItem = styled.li`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+  cursor: pointer;
+  transition: border var(--hover-effect);
 
-  &:first-of-type {
+  &:hover, &:focus {
     border: 1px solid var(--accent-color);
+  }
+
+  span {
+    color: var(--main-black);
   }
 
   div {
