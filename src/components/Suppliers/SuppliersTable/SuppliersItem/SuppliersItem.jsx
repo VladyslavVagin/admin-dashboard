@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import EditBtn from "../../EditBtn/EditBtn";
 import EditSupplierForm from "../../EditSupplierForm/EditSupplierForm";
-import { ColumnContent } from "../../../ProductsPage/ProductsTable/ProductItem/ProductItem.styled";
+import { ColumnContent } from "../../../OrdersTable/OrderItem/OrderItem.styled";
 import { Status } from "./SuppliersItem.styled";
 
 const SuppliersItem = ({ supplier }) => {

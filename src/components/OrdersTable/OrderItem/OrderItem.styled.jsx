@@ -21,12 +21,21 @@ export const ColumnContent = styled.td`
   padding: 14px 0;
   text-align: flex-start;
 
+  &:first-of-type {
+    min-width: 160px;
+    max-width: 160px;
+  }
+
+  &:nth-of-type(2) {
+    min-width: 240px;
+    max-width: 240px;
+  }
+
   &:nth-of-type(3),
   &:nth-of-type(4),
   &:nth-of-type(5),
   &:nth-of-type(2) {
-    padding-right: 8px;
-    padding-left: 24px;
+    padding-left: 20px;
   }
 
   &:not(:last-of-type) {
@@ -39,6 +48,7 @@ export const ColumnContent = styled.td`
 
   @media screen and (min-width: 375px) {
     font-size: 12px;
+    min-width: 120px;
   }
 
   @media screen and (min-width: 768px) {
@@ -48,6 +58,21 @@ export const ColumnContent = styled.td`
 
     &:last-of-type {
       padding-left: 20px;
+    }
+
+    &:first-of-type {
+      min-width: 240px;
+      max-width: 240px;
+    }
+
+    &:nth-of-type(2) {
+      min-width: 300px;
+      max-width: 300px;
+    }
+
+    &:nth-of-type(4) {
+      min-width: 190px;
+      max-width: 190px;
     }
   }
 `;

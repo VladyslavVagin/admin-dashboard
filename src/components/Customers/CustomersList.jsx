@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { useCustomers } from "../../hooks/useCustomers";
 import CustomerItem from "./CustomerItem/CustomerItem";
 import { TH } from "../Dashboard/RecentCustomers/RecentCustomers.styled";
-import { Table, Pagination, PageBtn } from "../OrdersTable/OrdersTable.styled";
+import { Table, PageBtn } from "../OrdersTable/OrdersTable.styled";
+import { Pagination } from "./CustomerList.styled";
 
 const CustomersList = () => {
   const { customers } = useCustomers();

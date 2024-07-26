@@ -1,6 +1,6 @@
 import React from "react";
 import imgAvatar from "../../../assets/images/avatar/avatar.png";
-import { ColumnContent } from "./CustomerItem.styled";
+import { ColumnContent } from "./Customers.styled";
 import { ContentUser } from "../../OrdersTable/OrderItem/OrderItem.styled";
 
 const CustomerItem = ({ customer }) => {

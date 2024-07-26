@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Buttons from "../../Buttons/Buttons";
 import EditProductForm from "../../EditProductForm/EditProductForm";
-import { ColumnContent } from "./ProductItem.styled";
+import { ColumnContent } from "../../../OrdersTable/OrderItem/OrderItem.styled";
 
 const ProductItem = ({ product }) => {
   const { name, category, price, stock, suppliers, _id } = product;
