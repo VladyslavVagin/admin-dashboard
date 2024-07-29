@@ -8,7 +8,7 @@
 <h4>Test account of admin:</h4>
 <p>Email: <b>vendor@gmail.com</b></p>
 <p>Password: <b>Vendor12345@</b></p>
-<em>Attention!!! Backend was deployed to onrender.com with free of charge plan. Can be delay about 50 seconds whith first HTTP-request.</em>
+<em>Attention!!! Backend was deployed to render.com with free of charge plan. Can be delay about 50 seconds whith first HTTP-request.</em>
 
 ##
 <h4>Technical skills:</h4>
