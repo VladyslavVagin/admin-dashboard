@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useProducts } from "../../../hooks/useProducts";
 import ProductItem from './ProductItem/ProductItem';
 import { Pagination, PageBtn } from '../../OrdersTable/OrdersTable.styled';
@@ -15,6 +15,12 @@ const ProductsTable = () => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentProducts =products?.length > 5 ? products.slice(startIndex, endIndex) : products;
+
+  useEffect(() => {
+    if(currentProducts?.length === 0 && currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  }, [currentPage, currentProducts]);
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
