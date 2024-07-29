@@ -4,7 +4,7 @@ import { useCustomers } from "../../hooks/useCustomers";
 import CustomerItem from "./CustomerItem/CustomerItem";
 import { TH } from "../Dashboard/RecentCustomers/RecentCustomers.styled";
 import { Table, PageBtn } from "../OrdersTable/OrdersTable.styled";
-import { Pagination } from "./CustomerList.styled";
+import { Pagination } from "../OrdersTable/OrdersTable.styled";
 
 const CustomersList = () => {
   const { customers } = useCustomers();

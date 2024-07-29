@@ -6,7 +6,8 @@ import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import Header from "../Header/Header";
 import SideBar from "../Sidebar/SideBar";
-import { MainSection } from "./SharedLayout.styled";
+import { LoadingDiv, MainSection } from "./SharedLayout.styled";
+import Loader from "../Common/Loader/Loader";
 
 const SharedLayout = () => {
   const isDesktop = useMediaQuery({ minWidth: 1440 });
@@ -17,7 +18,7 @@ const SharedLayout = () => {
         <Header />
         <MainSection>
           {isDesktop && <SideBar />}
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<LoadingDiv><Loader/></LoadingDiv>}>
             <Outlet />
           </Suspense>
         </MainSection>
