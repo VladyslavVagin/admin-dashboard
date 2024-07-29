@@ -67,7 +67,7 @@ export const Pagination = styled.div`
 `;
 
 export const PageBtn = styled.button`
-  max-width: 12px;
+  max-width: 12px!important;
   width: 12px;
   height: 12px;
   border: none;

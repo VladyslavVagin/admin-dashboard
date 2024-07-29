@@ -106,7 +106,7 @@ export const StatusOrder = styled.span`
       : status === "Cancelled"
       ? "#e85050"
       : status === "Processing"
-      ? "yellow"
+      ? "#721e67"
       : status === "Delivered"
       ? "brown"
       : "#70a6e8"};
