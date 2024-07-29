@@ -6,11 +6,13 @@ import { deleteProduct } from "../../../redux/products/operations";
 import sprite from "../../../assets/sprite.svg";
 import { ButtonDelete, ButtonEdit, FlexContainer } from "./Buttons.styled";
 
-const Buttons = ({ id, setIsEdit }) => {
+const Buttons = ({ id, setIsEdit, setIsSubmitting }) => {
   const dispatch = useDispatch();
 
-  const handleDelete = () => {
-    dispatch(deleteProduct(id));
+  const handleDelete = async () => {
+    setIsSubmitting(true);
+    await dispatch(deleteProduct(id));
+    setIsSubmitting(false);
     toast.success("Product deleted successfully");
   };
 

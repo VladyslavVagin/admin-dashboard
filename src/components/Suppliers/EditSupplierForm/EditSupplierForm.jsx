@@ -18,7 +18,7 @@ import {
   InvisibleInput,
 } from "../../ProductsPage/AddProductForm/AddProductForm.styled";
 
-const EditSupplierForm = ({ setIsModalOpen, supplier }) => {
+const EditSupplierForm = ({ setIsModalOpen, supplier, setIsSubmitting }) => {
   const dispatch = useDispatch();
   const [dateValue, setDateValue] = useState(supplier.date);
   const [statusValue, setStatusValue] = useState(supplier.status);
@@ -39,9 +39,11 @@ const EditSupplierForm = ({ setIsModalOpen, supplier }) => {
     }
   }, [dateValue, statusValue, setValue]);
 
-  const onSubmit = (data) => {
-    dispatch(editSupplier({ data, id: supplier._id }))
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
     setIsModalOpen(false);
+    await dispatch(editSupplier({ data, id: supplier._id }))
+    setIsSubmitting(false);
   };
 
   return (

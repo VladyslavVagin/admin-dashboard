@@ -1,5 +1,7 @@
 // @ts-nocheck
 import React, { useState } from "react";
+import { useProducts } from "../../../../hooks/useProducts";
+import Loader from "../../../Common/Loader/Loader";
 import Buttons from "../../Buttons/Buttons";
 import EditProductForm from "../../EditProductForm/EditProductForm";
 import { ColumnContent } from "../../../OrdersTable/OrderItem/OrderItem.styled";
@@ -7,28 +9,31 @@ import { ColumnContent } from "../../../OrdersTable/OrderItem/OrderItem.styled";
 const ProductItem = ({ product }) => {
   const { name, category, price, stock, suppliers, _id } = product;
   const [isEdit, setIsEdit] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { productsLoading } = useProducts();
+  const isLoading = productsLoading && isSubmitting;
 
   return (
     <>
-      {isEdit && <EditProductForm setIsEdit={setIsEdit} product={product} />}
+      {isEdit && <EditProductForm setIsEdit={setIsEdit} product={product} setIsSubmitting={setIsSubmitting} />}
       <tr>
         <ColumnContent>
-          <p>{name}</p>
+          <p>{isLoading ? <Loader/> : name}</p>
         </ColumnContent>
         <ColumnContent>
-          <p>{category}</p>
+          <p>{isLoading ? <Loader/> : category}</p>
         </ColumnContent>
         <ColumnContent>
-          <span>{stock}</span>
+          <span>{isLoading ? <Loader/> : stock}</span>
         </ColumnContent>
         <ColumnContent>
-          <p>{suppliers}</p>
+          <p>{isLoading ? <Loader/> : suppliers}</p>
         </ColumnContent>
         <ColumnContent>
-          <span>{price}</span>
+          <span>{isLoading ? <Loader/> : price}</span>
         </ColumnContent>
         <ColumnContent>
-          <Buttons id={_id} setIsEdit={setIsEdit} />
+          <Buttons id={_id} setIsEdit={setIsEdit} setIsSubmitting={setIsSubmitting} />
         </ColumnContent>
       </tr>
     </>

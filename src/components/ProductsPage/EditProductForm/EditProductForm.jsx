@@ -19,7 +19,7 @@ import {
   FlexInputContainer,
 } from "../AddProductForm/AddProductForm.styled";
 
-const EditProductForm = ({ setIsEdit, product }) => {
+const EditProductForm = ({ setIsEdit, product, setIsSubmitting }) => {
   const [categoryValue, setCategoryValue] = useState(product.category);
   const [suppliersValue, setSuppliersValue] = useState(product.suppliers);
   const dispatch = useDispatch();
@@ -40,9 +40,11 @@ const EditProductForm = ({ setIsEdit, product }) => {
     }
   }, [categoryValue, suppliersValue, setValue]);
 
-  const onSubmit = (data) => {
-    dispatch(editProduct({ data, id: product._id }));
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
     setIsEdit(false);
+    await dispatch(editProduct({ data, id: product._id }));
+    setIsSubmitting(false);
     toast.success("Product edited successfully");
   };
 
