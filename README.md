@@ -3,6 +3,12 @@
 <h3>Type: Individual MERN stack project</h3> 
 <h3>Role: Fullstack Web Developer</h3>
 <h3>Backend: <a href="https://backend-admin-ht2s.onrender.com/api-docs" target="_blank">Swagger documentation with routes</a></h3>
+##
+
+<h4>Test account of admin:</h4>
+<p>Email: <b>vendor@gmail.com</b></p>
+<p>Password: <b>Vendor12345@</b></p>
+<em>Attention!!! Backend was deployed to onrender.com with free of charge plan. Can be delay about 50 seconds whith first HTTP-request.</em>
 
 ##
 <h4>Technical skills:</h4>
